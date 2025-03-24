@@ -1,0 +1,22 @@
+.Header {
+    background: #101010;
+    .center-menu-section {
+        ul {
+            padding: 4px !important;
+        }
+        li {
+            a {
+                color: #fff;   
+                transition-duration: 0.5s; 
+                font-weight: 600;
+                &:hover {
+                    background: #5252527a;
+                }
+            }
+            a.active {
+                background: #fff !important;
+                color: #101010;
+            }
+        }
+    }
+}

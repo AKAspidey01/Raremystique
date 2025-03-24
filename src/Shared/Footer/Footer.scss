@@ -1,0 +1,28 @@
+.Footer {
+    background: #101010;
+    .menu-navigation-section {
+        a {
+            transition: 0.5s;
+        }
+        a:hover {
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: gradient 5s linear infinite;
+        }
+    }
+}
+
+@keyframes linksgradient {
+    0% {
+        background-position: right center;
+    }
+    50% {
+        background-position: left center;
+    }
+    100% {
+        background-position: right center;
+    }
+  }
