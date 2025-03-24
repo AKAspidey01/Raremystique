@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Shop.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import ShirtImage from '../../assets/images/shirt-image-dummy.jpg';
 import ShirtImage2 from '../../assets/images/shirt-image-dummy-2.jpg';
 import Slider from '@mui/material/Slider';
@@ -9,6 +9,8 @@ import Slider from '@mui/material/Slider';
 
 
 const Shop = () => {
+
+  const navigate = useNavigate()
 
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [sliderValue, setSliderValue] = useState([10, 20]);
@@ -340,7 +342,7 @@ const Shop = () => {
                     <div className="grid-cols-3 grid gap-5">
                       {bestSellerCards.map((items , index) => {
                           return (
-                            <button type='button' className="single-fashion-card text-left relative z-10 group" key={index}>
+                            <button type='button' onClick={() => navigate('/shop/single-product')} className="single-fashion-card text-left relative z-10 group" key={index}>
                               <div className="inner-single-fashion-card overflow-hidden">
                                   <div className="top-cloth-image-section relative overflow-hidden rounded-2xl">
                                     <img src={items.image} className='max-h-[450px] duration-300 group-hover:scale-110 object-cover flex' alt="" />
