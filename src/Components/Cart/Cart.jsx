@@ -11,49 +11,85 @@ const Cart = () => {
 
   const [count , setCount] = useState(1);
 
-  const handleIncrement = () => {
-    if (count >= 10) {
-      toast.success("Quantity limit reached");
-      setCount(10);
-    } else {
-      setCount(count + 1);
-    }
-  };
+  // const handleIncrement = () => {
+  //   if (count >= 10) {
+  //     toast.success("Quantity limit reached");
+  //     setCount(10);
+  //   } else {
+  //     setCount(count + 1);
+  //   }
+  // };
   
-  const handleDecrement = () => {
-    if (count <= 1) {
-      toast.error("Quantity should be minimum 1");
-      setCount(1);
-    } else {
-      setCount(count - 1);
-    }
-  };
+  // const handleDecrement = () => {
+  //   if (count <= 1) {
+  //     toast.error("Quantity should be minimum 1");
+  //     setCount(1);
+  //   } else {
+  //     setCount(count - 1);
+  //   }
+  // };
 
-
-  const cartArray = [
+  const [cartArray, setCartArray] = useState([
     {
       img: BrownShirt,
       name: 'Brown Graphic Printed Shirt',
       size: 'Large',
       color: 'Brown',
-      price: '₹599'
+      price: '₹599',
+      itemCount: 1
     },
     {
       img: BlackShirt,
       name: 'Black Graphic Printed Shirt',
       size: 'Large',
       color: 'Black',
-      price: '₹599'
+      price: '₹599',
+      itemCount: 1
     },
     {
       img: BrownShirt,
       name: 'Brown Graphic Printed Shirt',
       size: 'Large',
       color: 'Brown',
-      price: '₹599'
-    },
+      price: '₹599',
+      itemCount: 1
+    }
+  ]);
+  
 
-  ]
+
+  const handleIncrement = (index) => {
+    setCartArray(prevCart => 
+      prevCart.map((item, i) => {
+        if (i === index) {
+          if (item.itemCount >= 10) {
+            toast.success("Quantity limit reached");
+            return { ...item, itemCount: 10 };
+          } else {
+            return { ...item, itemCount: item.itemCount + 1 };
+          }
+        }
+        return item;
+      })
+    );
+  };
+  
+  const handleDecrement = (index) => {
+    setCartArray(prevCart => 
+      prevCart.map((item, i) => {
+        if (i === index) {
+          if (item.itemCount <= 1) {
+            toast.error("Quantity should be minimum 1");
+            return { ...item, itemCount: 1 };
+          } else {
+            return { ...item, itemCount: item.itemCount - 1 };
+          }
+        }
+        return item;
+      })
+    );
+  };
+
 
 
 
@@ -93,13 +129,13 @@ const Cart = () => {
                       </div>
                       <div className="right-side-cart-plus-buttons">
                         <div className="qunatity-selector bg-[#F0F0F0] rounded-full flex items-center p-2 gap-3">
-                            <button type="button" onClick={handleDecrement} className="minus w-6 h-6 flex items-center justify-center">
+                            <button type="button" onClick={() => handleDecrement(index)} className="minus w-6 h-6 flex items-center justify-center">
                               <i className="ri-subtract-line text-Primary text-xl"></i>
                             </button>
                             <div className="count w-6 h-6 flex items-center justify-center">
-                              <p className='font-light text-xl'>{count}</p>
+                              <p className='font-light text-xl'>{items?.itemCount}</p>
                             </div>
-                            <button type="button" onClick={handleIncrement} className="plus w-6 h-6 flex items-center justify-center">
+                            <button type="button" onClick={() => handleIncrement(index)} className="plus w-6 h-6 flex items-center justify-center">
                               <i className="ri-add-line text-Primary text-xl"></i>
                             </button>
                         </div>

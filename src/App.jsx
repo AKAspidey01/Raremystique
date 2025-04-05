@@ -11,22 +11,41 @@ import SingleProduct from './Components/SingleProduct/SingleProduct';
 import { Toaster } from 'react-hot-toast';
 import ScrollToTop from './utils/ScrollToTop';
 import Cart from './Components/Cart/Cart';
+import { AuthProvider } from './utils/AuthContext';
+import Login from './Components/Auth/Login/Login';
+import HeaderWrapper from './utils/HeaderWrapper';
+import FooterWrapper from './utils/FooterWrapper';
+import ProtectedRoutes from './utils/ProtectedRoutes';
+import MyProfile from './Components/ProfileScreens/MyProfile/MyProfile';
+import MyOrders from './Components/ProfileScreens/MyOrders/MyOrders';
+import MyAddresses from './Components/ProfileScreens/MyAddresses/MyAddresses';
 
 
 
 const Layout = () => {
   return (
     <>
-    <Header/>
-      <Routes>
-        <Route exact={true} Component={Home} path='/'/>
-        <Route exact={true} Component={AboutUs} path='/about-us'/>
-        <Route exact={true} Component={Shop} path='/shop'/>
-        <Route exact={true} Component={SingleProduct} path='/shop/single-product'/>
-        <Route exact={true} Component={Cart} path='/cart'/>
-        <Route exact={true} Component={Contactus} path='/contact-us'/>
-      </Routes>
-    <Footer/>
+      <AuthProvider>
+        <HeaderWrapper/>
+        <Routes>
+          <Route exact={true} Component={Home} path='/'/>
+          <Route exact={true} Component={Login} path='/login'/>
+          <Route exact={true} Component={AboutUs} path='/about-us'/>
+          <Route exact={true} Component={Shop} path='/shop'/>
+          <Route exact={true} Component={SingleProduct} path='/shop/single-product'/>
+          <Route exact={true} Component={Cart} path='/cart'/>
+          <Route exact={true} Component={Contactus} path='/contact-us'/>
+
+          <Route Component={ProtectedRoutes}>
+            <Route exact={true} Component={MyProfile} path='/profile'/>
+            <Route exact={true} Component={Cart} path='/cart'/>
+            <Route exact={true} Component={Contactus} path='/contact-us'/>
+            <Route exact={true} Component={MyOrders} path='/orders'/>
+            <Route exact={true} Component={MyAddresses} path='/address'/>
+          </Route>
+        </Routes>
+        <FooterWrapper/>
+      </AuthProvider>
     </>
   )
 }

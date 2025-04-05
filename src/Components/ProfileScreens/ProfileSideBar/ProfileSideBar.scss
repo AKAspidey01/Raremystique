@@ -1,0 +1,33 @@
+.ProfileSideBar {
+    .bottom-menu-section {
+        li {
+            a{
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 4px;
+                    height: 100%;
+                    background: linear-gradient(to top, #f64f59, #c471ed, #12c2e9);
+                    transform: scaleY(0);
+                    transform-origin: bottom;
+                    transition: transform 0.5s ease;
+                }
+            }
+            a.active {
+                background: #e5e7eb;
+            }
+            a.active::after {
+                    transform: scaleY(1);
+                    transform-origin: top;
+
+            }
+            a:hover::after {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+        }
+    }
+}

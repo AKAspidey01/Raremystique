@@ -1,0 +1,17 @@
+.Login {
+    .email-input-icon {
+        transform: translate(-50% , -50%);
+    }
+    // .inner-login-form-section {
+    //     backdrop-filter: blur(10px);
+    // }
+    .login-submit-button {
+        button {
+            transform: scale(1);
+            transition-duration: 0.3s;
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}

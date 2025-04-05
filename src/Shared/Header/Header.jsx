@@ -3,10 +3,14 @@ import './Header.scss';
 import Logo from '../../assets/images/logo.svg';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
+import { useAuth } from '../../utils/AuthContext';
+// import { useAuth } from '../../utils/AuthContext';
 
 const Header = () => {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
+  const {authToken} = useAuth()
 
   const marqueeSlider = [
     {
@@ -35,6 +39,8 @@ const Header = () => {
     },
   ]
 
+
+  console.log(authToken)
 
   return  (
     <div className="Header">
@@ -83,13 +89,14 @@ const Header = () => {
                 </ul>
               </nav>
               <div className="last-profile-cart-section flex items-center gap-8">
+              {authToken ? 
                 <div className="cart-button-section">
                   <button type="button">
                     <i className="bi bi-cart3 text-white text-2xl "></i>
-                  </button>
-                </div>
+                  </button> 
+                </div> : null }
                 <div className="profile-button">
-                  <button type="button">
+                  <button type="button" onClick={() => navigate('/profile')}>
                     <i className="bi bi-person-circle text-white text-2xl"></i>
                   </button>
                 </div>
