@@ -25,3 +25,47 @@
         background-position: right center;
     }
   }
+
+
+
+
+  @media only screen and (max-width: 574.90px) {
+    .contact-section-1 {
+        .contact-form-section {
+            .inner-contact-form-heading-section  {
+                h2 {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+    .contact-section-1 {
+        .inner-login-form-sec  {
+            gap: 25px 0px;
+            .form-inputsec  {
+                grid-column: span 12 / span 12;
+            }
+            .login-submit-button {
+                grid-column: span 10 / span 10;
+            }
+        }
+    }
+
+  }
+
+
+  @media only screen and (max-width: 474.90px) {
+    .contact-section-1 {
+        .contact-form-section {
+            .inner-contact-form-heading-section  {
+                h2 {
+                    font-size: 20px;
+                }
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+  }

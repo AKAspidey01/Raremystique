@@ -18,6 +18,14 @@ import Person3 from '../../assets/images/our-team/person-3.png';
 import Person4 from '../../assets/images/our-team/person-4.png';
 
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import "swiper/css/effect-coverflow";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination,  EffectCoverflow , Autoplay  } from 'swiper/modules';
+
+
 
 
 const AboutUs = () => {
@@ -68,6 +76,26 @@ const AboutUs = () => {
         image: Person4,
         name: 'Chris Williams',
         Role: 'Co-Founder'
+      },
+      {
+        image: Person1,
+        name: 'Charan Magapu',
+        Role: 'Founder'
+      },
+      {
+        image: Person2,
+        name: 'Sriraj',
+        Role: 'Founder'
+      },
+      {
+        image: Person3,
+        name: 'Sai Ganesh',
+        Role: 'Founder'
+      },
+      {
+        image: Person4,
+        name: 'Chris Williams',
+        Role: 'Co-Founder'
       }
     ]
 
@@ -84,7 +112,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        <section className="about-section-1p py-16 bg-gray-200 bg-opacity-60">
+        <section className="about-section-1  py-16 bg-gray-200 bg-opacity-60">
           <div className="inner-about-section-1">
             <div className="container">
                 <div className="about-section-1-inner-main">
@@ -129,8 +157,8 @@ const AboutUs = () => {
                       <p className='text-xl text-Primary'>At <span className='font-semibold'> RareMystique </span>, our goal is simple — to deliver high-quality, custom-printed t-shirts that speak your style. We’re here to redefine everyday wear with better fabric, better prints, and a better experience. As a passionate startup, every step we take is focused on growing with purpose and offering value that lasts.</p>
                     </div>
                   </div>
-                  <div className="banner-right-image col-span-4 rounded-[30px] h-full relative overflow-hidden">
-                    <img src={AboutSecImg} className='max-w-[500px] absolute w-full h-full object-cover top-0 left-0' alt="" />
+                  <div className="banner-right-image col-span-4  h-full relative overflow-hidden">
+                    <img src={AboutSecImg} className='max-w-[500px] rounded-[30px]  w-full h-full object-cover' alt="" />
                   </div>
               </div>
             </div>
@@ -165,18 +193,62 @@ const AboutUs = () => {
         </section>
         <section className="about-section-4 py-16">
           <div className="inner-about-section-4">
-            <div className="container">
-                <div className="inner-contact-form-heading-section flex gap-4 items-center">
-                  <img src={Sparkle} className='w-8 h-8' alt="" />
-                  <h2 className='text-Primary font-semibold font-DMSans text-4xl leading-normal'> The Faces Behind the Fabric</h2>
-                </div>
-                <div className="bottom-grid-section-about-sec-4 mt-10">
-                    <div className="inner-about-sec-3-grid grid grid-cols-4 gap-x-4">
-                      {team.map((items , index) => {
-                        return (
+              <div className="container">
+                  <div className="inner-contact-form-heading-section flex gap-4 items-center">
+                    <img src={Sparkle} className='w-8 h-8' alt="" />
+                    <h2 className='text-Primary font-semibold font-DMSans text-4xl leading-normal'> The Faces Behind the Fabric</h2>
+                  </div>
+              </div>
+              <div className="bottom-grid-section-about-sec-4 mt-10">
+                <Swiper 
+                  className="mySwiper"
+                  grabCursor={true}
+                  centeredSlides={true}
+                  slidesPerView={4}
+                  speed={600}
+                  loop={true}
+                  initialSlide={2}
+                  spaceBetween={30}
+                  preventClicks={true}
+                  autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true
+                  }}  
+                  breakpoints={{
+                      2000: {
+                          slidesPerView: 4,
+                      },
+                      1700 : {
+                          slidesPerView: 4
+                      },
+                      1200: {
+                          slidesPerView: 4
+                      },
+                      992: {
+                          slidesPerView: 3
+                      },
+                      674: {
+                          slidesPerView: 2
+                      },
+                      574: {
+                        slidesPerView: 2
+                      },
+                      375: {
+                          slidesPerView: 1,
+                      },
+                      75: {
+                          slidesPerView: 1
+                      }
+                  }}
+                  modules={[ Autoplay , Navigation]}
+                >
+                {team.map((items , index) => {
+                    return (
+                      <SwiperSlide key={index}>
                         <div className="single-faces-card-about-3" key={index}>
                             <div className="image-section-team relative rounded-3xl overflow-hidden">
-                              <img src={items.image} alt="" />
+                              <img src={items.image} className='object-cover w-full' alt="" />
                               <div className="bottom-details-section-person absolute bottom-4 shadow-2xl overflow-hidden rounded-2xl w-11/12 left-1/2">
                                 <div className="inner-bottom-details-section bg-white rounded-2xl  p-4">
                                     <h4 className='text-2xl font-semibold'>{items.name}</h4>
@@ -185,11 +257,11 @@ const AboutUs = () => {
                               </div>
                             </div>
                         </div>
-                        )
-                      })}
-                    </div>
-                </div> 
-            </div>
+                      </SwiperSlide>
+                    )
+                })}
+                </Swiper>
+              </div> 
           </div>
         </section>
       </div>

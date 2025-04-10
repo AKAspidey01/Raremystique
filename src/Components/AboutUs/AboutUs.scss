@@ -55,3 +55,146 @@
         background-position: right center;
     }
 }
+
+@media only screen and (max-width: 991.90px) {
+    .about-1-grid-section  {
+        .single-about-1-grid-column  {
+            grid-column: span 12 / span 12;
+        }
+    }
+    .inner-banner-section-about-2 {
+        gap: 30px 0px;
+        .banner-left-part-about-2 {
+            grid-column: span 12 / span 12; 
+            order: 2;
+           
+        }
+        .banner-right-image {
+            order: 1;
+            grid-column: span 12 / span 12;
+            img {
+                width: 100% !important;
+                max-width: 100% !important;
+                max-height: 300px;
+            }
+        }
+    }
+    .bottom-social-media-section-grid {
+        .single-social-media-block  {
+            grid-column: span 6 / span 6 !important;
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width: 574.90px) {
+    .bottom-grid-section-about-sec-4 {
+        padding: 0px 20px;
+    }
+    .inner-about-section-2 {
+        .inner-banner-section-about-2  {
+            .banner-right-image  {
+                margin-top: 0px !important;
+            }
+        }
+    }
+    .bottom-social-media-section-grid {
+        .single-social-media-block  {
+            grid-column: span 12 / span 12 !important;
+        }
+    }
+    .about-section-2 {
+        .banner-tagline  {
+            padding: 30px !important;
+            h2 {
+                font-size: 35px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+    .bread-image-sec  {
+        img {
+            min-height: 350px !important;
+        }
+    }
+    .breacrumb-content  {
+        h2 {
+            font-size: 38px;
+        }
+    }
+    .contact-section-2 {
+        .inner-contact-form-heading-section  {
+            h2 {
+                font-size: 28px;
+            }
+        }
+
+    }
+    .about-section-4  {
+        .inner-about-section-4 {
+            .inner-contact-form-heading-section  {
+                h2 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .about-section-1  , .about-section-2 , .contact-section-2 , .about-section-4 {
+        padding: 40px 0px;
+    }
+}
+
+
+
+@media only screen and (max-width: 474px) {
+    .about-section-2 {
+        .banner-tagline  {
+            padding: 25px !important;
+            h2 {
+                font-size: 35px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+    .contact-section-2 {
+        .inner-contact-form-heading-section  {
+            img {
+                width: 20px;
+                height: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+    }
+    .about-section-4  {
+        .inner-about-section-4 {
+            .inner-contact-form-heading-section  {
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
+            }
+           
+           
+        }
+    }
+    .single-faces-card-about-3 {
+        .image-section-team {
+            img {
+                max-height: 400px;
+                min-height: 400px;
+            }
+        }
+    }
+}
