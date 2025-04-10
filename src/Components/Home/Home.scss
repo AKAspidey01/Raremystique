@@ -69,3 +69,87 @@
         background-position: right center;
     }
     }
+
+
+
+    @media only screen and (max-width: 991.90px) {
+        .home-section-3 { 
+            .banner-right-image {
+                position: unset;
+                img {
+                    max-width: 400px;
+                    margin-left: auto !important;
+                }
+            }
+            .inner-banner-section-home-3 {
+                padding-bottom: 0px !important;
+            }
+
+        }
+        .banner-headingsec {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: 767.90px) {
+       .our-bestsellers-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+       }
+    }
+
+
+    @media only screen and (max-width: 676.90px) {
+        .banner-headingsec {
+            h1 {
+                font-size: 30px;
+            }
+        }
+        .home-banner-slider-sec {
+            padding: 0px 20px;
+        }
+        .inner-banner-section-home-3  {
+            h2 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 574.90px) {
+        .our-bestsellers-card-grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+           }
+        .home-section-2-header-section {
+            h2 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .inner-banner-section-home-3  {
+            padding: 30px 30px 0px 30px;
+            .top-sparks-label  {
+                p {
+                    font-size: 16px;
+                }
+            }
+            h2 {
+                font-size: 25px;
+            }
+        }
+        .banner-left-part-home-3 {
+            button {
+                margin-top: 40px;
+            }
+        }
+        .banner-right-image  {
+            margin-top: 30px;
+        }
+        .home-section-1 , .home-section-2 , .home-section-3 {
+            padding: 40px 0px
+        }
+    }

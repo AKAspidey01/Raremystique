@@ -82,7 +82,7 @@ const Footer = () => {
                                     </div>
                                   </div>
                               </div>
-                              <div className="col-span-8   right-side-footer-menu-part">
+                              <div className="col-span-8  right-side-footer-menu-part">
                                 <div className="grid grid-cols-6 gap-5 items-center h-full footer-menu-handler-grid">
                                     <div className="menu-navigation-section footer-menu-1 similar-footer-menu-sections pl-10 col-span-2"> 
                                         {/* <h2 className='font-semibold font-Poppins text-white'>Home</h2> */}

@@ -26,3 +26,39 @@
         background-position: right center;
     }
   }
+
+@media only screen and (max-width: 991.90px) {
+    .footer-main-grid-section {
+        gap: 40px 0px;
+    }
+    .bio-logo-section , .right-side-footer-menu-part {
+        grid-column: span 12 / span 12;
+    }
+}
+
+@media only screen and (max-width: 678.90px) {
+    .footer-menu-handler-grid {
+        gap: 40px 0px;
+    }
+    .menu-navigation-section {
+        grid-column: span 3 / span 3;
+        padding: 0px !important;
+    }
+}
+
+
+
+@media only screen and (max-width: 474px) {
+    .menu-navigation-section {
+        grid-column: span 6 / span 6;
+        padding: 0px !important;
+    }
+    .footer-logo-desc  {
+        width: 100% !important;
+    }
+    .copyright-inner  {
+        p {
+            font-size: 14px !important;
+        }
+    }
+}

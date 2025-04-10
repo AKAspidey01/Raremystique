@@ -19,4 +19,51 @@
             }
         }
     }
+    .mobile-menu-section {
+        display: none ;
+    }
+    .mobile-fixed-overlay-section {
+        background: #0000005d;
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+@media only screen and (max-width: 991.90px) {
+    .Header {
+        .account-status-displayer {
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+        }
+        .center-menu-section {
+            display: none;
+        }
+        .mobile-menu-section {
+            display: block !important;
+        }
+        .mobile-fixed-header-section {
+            width: 40%;
+        }
+        .mobile-menu-navigation-section {
+            a.active {
+                background: #101010;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767.90px) {
+    .Header {
+        .mobile-fixed-header-section {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 474px) {
+    .Header {
+        .mobile-fixed-header-section {
+            width: 90%;
+        }
+    }
 }

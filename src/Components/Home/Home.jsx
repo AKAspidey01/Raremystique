@@ -247,7 +247,7 @@ const Home = () => {
                   <p className='text-lg text-Primary text-center opacity-50'>Don't miss out our top selling styles and outfits</p>
                 </div>
                 <div className="bottom-bestseller-products mt-10">
-                  <div className="grid grid-cols-3 gap-8">
+                  <div className="grid grid-cols-3 gap-8 our-bestsellers-card-grid">
                     {bestSellerCards.map((items , index) => {
                         return (
                           <button type='button' className="single-fashion-card text-left relative z-10 group" key={index}>

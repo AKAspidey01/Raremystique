@@ -19,12 +19,13 @@ import ProtectedRoutes from './utils/ProtectedRoutes';
 import MyProfile from './Components/ProfileScreens/MyProfile/MyProfile';
 import MyOrders from './Components/ProfileScreens/MyOrders/MyOrders';
 import MyAddresses from './Components/ProfileScreens/MyAddresses/MyAddresses';
+import OrderDetails from './Components/ProfileScreens/MyOrders/OrderDetails';
 
 
 
 const Layout = () => {
   return (
-    <>
+    <div className='App'>
       <AuthProvider>
         <HeaderWrapper/>
         <Routes>
@@ -33,20 +34,19 @@ const Layout = () => {
           <Route exact={true} Component={AboutUs} path='/about-us'/>
           <Route exact={true} Component={Shop} path='/shop'/>
           <Route exact={true} Component={SingleProduct} path='/shop/single-product'/>
-          <Route exact={true} Component={Cart} path='/cart'/>
           <Route exact={true} Component={Contactus} path='/contact-us'/>
 
           <Route Component={ProtectedRoutes}>
             <Route exact={true} Component={MyProfile} path='/profile'/>
             <Route exact={true} Component={Cart} path='/cart'/>
-            <Route exact={true} Component={Contactus} path='/contact-us'/>
             <Route exact={true} Component={MyOrders} path='/orders'/>
+            <Route exact={true} Component={OrderDetails} path='/orders/:id'/>
             <Route exact={true} Component={MyAddresses} path='/address'/>
           </Route>
         </Routes>
         <FooterWrapper/>
       </AuthProvider>
-    </>
+    </div>
   )
 }
 

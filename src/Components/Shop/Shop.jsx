@@ -16,7 +16,9 @@ const Shop = () => {
   const [sliderValue, setSliderValue] = useState([10, 20]);
   const [amountRange, setAmountRange] = useState(["₹600", "₹700"]);
   const [colorSelect , setColorSelect] = useState('') ;
-  const [sizeSelect , setSizeSelect] = useState('')
+  const [sizeSelect , setSizeSelect] = useState('');
+
+  const [mobileFilter , setMobileFilter] = useState(false)
 
   const convertToAmount = (value) =>  {
     return `₹${600 + (value - 10) * 10}`
@@ -27,24 +29,6 @@ const Shop = () => {
     setAmountRange([convertToAmount(newValue[0]), convertToAmount(newValue[1])]);
   };
 
-
-
-
-  // const images = [
-  //   {
-  //     original: "https://picsum.photos/id/1018/1000/600/",
-  //     thumbnail: "https://picsum.photos/id/1018/250/150/",
-  //   },
-  //   {
-  //     original: "https://picsum.photos/id/1015/1000/600/",
-  //     thumbnail: "https://picsum.photos/id/1015/250/150/",
-  //   },
-  //   {
-  //     original: "https://picsum.photos/id/1019/1000/600/",
-  //     thumbnail: "https://picsum.photos/id/1019/250/150/",
-  //   },
-  // ];
-  
 
 
     const bestSellerCards = [
@@ -243,23 +227,33 @@ const Shop = () => {
         <div className="inner-main-shop-section">
           <div className="top-shop-breadcrumb-section">
             <div className="shop-container">
-              <ul className='flex items-center gap-x-2 '>
-                <li><NavLink className={`text-Primary `} to={'/'}>Home</NavLink></li>
-                <li><i className="ri-arrow-right-s-line"></i></li>
-                <li><p className={`text-Primary font-semibold `}>Shop</p></li>
-              </ul>
-              <h4 className='text-2xl font-DMSans font-semibold mt-2'>Shop wide range collections - <span className='font-normal opacity-50'>1406</span> </h4>
-            </div>
+              <div className="top-shop-breacrumb-section-outer flex items-center gap-8 flex-wrap justify-between">
+                <div className="bread-crumb-section-navigation">
+                  <ul className='flex items-center gap-x-2 '>
+                    <li><NavLink className={`text-Primary `} to={'/'}>Home</NavLink></li>
+                    <li><i className="ri-arrow-right-s-line"></i></li>
+                    <li><p className={`text-Primary font-semibold `}>Shop</p></li>
+                  </ul>
+                  <h4 className='text-2xl font-DMSans font-semibold mt-2'>Shop wide range collections - <span className='font-normal opacity-50'>1406</span> </h4>
+                </div>
+                <div className="right-filter-button-mobile">
+                  <button type="button" onClick={() => setMobileFilter(true)} className='text-xl bg-gray-200 bg-opacity-70 px-6 py-2 rounded-full'>Filter <i className="bi bi-sliders2-vertical ml-2 opacity-70 text-Primary"></i></button>
+                </div>
+              </div>
+            </div>           
           </div>
           <section className="shop-section-1 py-10">
             <div className="inner-shop-section-1">
               <div className="shop-container">
-                <div className="grid grid-cols-12 gap-8">
-                  <div className="left-filter-section col-span-3">
+                <div className="grid grid-cols-12 gap-8 main-shopping-filter-grid-section">
+                  <div className={`left-filter-section col-span-3 ${mobileFilter ? 'active-mobile' : ''}`}>
                     <div className="shop-filter-main-section border border-Primary border-opacity-20 rounded-2xl p-5 sticky top-5">
                         <div className="top-filter-heading-shop flex items-center gap-4 justify-between border-b border-Primary border-opacity-20 pb-4 mb-4">
                           <h2 className='font-DMSans text-xl font-semibold text-Primary'>Fliter</h2>
-                          <i className="bi bi-sliders2-vertical opacity-70 text-Primary text-xl"></i>
+                          <i className="bi bi-sliders2-vertical opacity-70 text-Primary text-xl filter-desktop-icon"></i>
+                          <div className="filter-closer">
+                            <button type="button" className='w-8 h-8' onClick={() => setMobileFilter(false)}><i className="bi bi-x-lg opacity-70 text-Primary text-xl"></i></button>
+                          </div>
                         </div>
                         <div className="all-filtering-blocks-section flex flex-col gap-8">
                           <div className="single-filtering-blocks-shop border-b border-Primary border-opacity-20 pb-8">
@@ -339,7 +333,7 @@ const Shop = () => {
                     </div>
                   </div>
                   <div className="right-shop-section col-span-9">
-                    <div className="grid-cols-3 grid gap-5">
+                    <div className="grid-cols-3 shop-cards-grid-section-right grid gap-5">
                       {bestSellerCards.map((items , index) => {
                           return (
                             <button type='button' onClick={() => navigate('/shop/single-product')} className="single-fashion-card text-left relative z-10 group" key={index}>
@@ -383,6 +377,9 @@ const Shop = () => {
                       })}
                     </div>
                   </div>
+                  <button onClick={() => setMobileFilter(false)} type='button' className={`filter-overlay-section-shop fixed top-0 w-full z-[99] duration-300 h-full  ${mobileFilter ? 'right-0 opacity-100' : '-right-full opacity-0'}`}>
+
+                  </button>
                 </div>
               </div>
             </div>
