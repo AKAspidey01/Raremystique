@@ -110,7 +110,7 @@ const Cart = () => {
           <div className="inner-cart-section-1">
             <div className="shop-container">
               <div className="inner-cart-section-1-grid-sec grid grid-cols-12 gap-5">
-                <div className="col-span-7 border-black border-opacity-20 rounded-2xl border px-5">
+                <div className="col-span-7 left-item-section-cart border-black border-opacity-20 rounded-2xl border px-5">
                   {cartArray.map((items , index) => {
                     return (
                     <div className={`inner-complete-cart-list-section flex items-end justify-between relative gap-5  py-5 ${index === cartArray.length - 1 ? '' : 'border-b border-black border-opacity-20'}`} key={index}>
@@ -145,7 +145,7 @@ const Cart = () => {
                     )
                   })}
                 </div>
-                <div className="col-span-4 ">
+                <div className="col-span-5 right-pricing-details-sec-cart ">
                   <div className="shop-summary-main-section border-Primary border-opacity-20 rounded-2xl border p-5 sticky top-5">
                     <h2 className='font-semibold text-xl mb-5'>Shop Summary</h2>
                     <div className="order-detais-section flex flex-col gap-3">

@@ -31,3 +31,37 @@
         }
     }
 }
+
+    .top-menu-grid-section-outer {
+        ul {
+            li {
+                a.active {
+                    background: #ffecec !important;
+                }
+            }
+        }
+    }
+
+@media only screen and (max-width: 767px) {
+    .bottom-menu-section {
+        ul {
+            li {
+                grid-column: span 6 / span 6;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .bottom-menu-section {
+        ul {
+            li {
+                grid-column: span 12 / span 12;
+            }
+        }
+    }
+    .button-whatsapp-chat {
+        padding: 15px 16px;
+    }
+}

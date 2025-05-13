@@ -1,1 +1,18 @@
 .Cart {}
+
+
+@media only screen and (max-width: 991.99px) {
+    .inner-cart-section-1-grid-sec {
+        .right-pricing-details-sec-cart , .left-item-section-cart{
+            grid-column: span 12 / span 12;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 574px) {
+    .left-side-cart-image-details-sec ,.inner-complete-cart-list-section  {
+        flex-direction: column;
+        align-items: baseline !important;
+    }
+}

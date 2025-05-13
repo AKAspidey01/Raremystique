@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './MyProfile.scss';
 import ProfileSideBar from '../ProfileSideBar/ProfileSideBar';
+import MobileTopBar from '../ProfileSideBar/MobileTopBar';
 
 const MyProfile = () => {
 
@@ -32,6 +33,9 @@ const MyProfile = () => {
           <div className="grid grid-cols-12 profile-grid-section gap-8">
             <div className="left-profile-sidebar-sec col-span-4">
               <ProfileSideBar/>
+            </div>
+            <div className="left-mobile-side-bar-section col-span-12">
+              <MobileTopBar/>
             </div>
             <div className="right-profile-section bg-white rounded-3xl col-span-8">
               <div className="inner-right-profile-section p-8">
@@ -81,7 +85,7 @@ const MyProfile = () => {
                       </div>
                       <div className="form-inputsec col-span-12">
                           <p className='opacity-50 mb-1'>Gender</p>
-                          <div className="inner-input-section relative w-full flex items-center gap-12">
+                          <div className="inner-input-section gender-section-outer-flex relative w-full flex items-center gap-12">
                               {gender.map((items , index) => {
                                 return (
                                   <div className="single-radio-sec">

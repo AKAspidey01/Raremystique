@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Shop.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
 import ShirtImage from '../../assets/images/shirt-image-dummy.jpg';
 import ShirtImage2 from '../../assets/images/shirt-image-dummy-2.jpg';
 import Slider from '@mui/material/Slider';
+import { config } from '../../env-services';
+import axios from 'axios';
 // import "react-image-gallery/styles/css/image-gallery.css";
 // import ImageGallery from "react-image-gallery";
 
@@ -17,6 +19,7 @@ const Shop = () => {
   const [amountRange, setAmountRange] = useState(["₹600", "₹700"]);
   const [colorSelect , setColorSelect] = useState('') ;
   const [sizeSelect , setSizeSelect] = useState('');
+  const [allProducts , setAllProducts] = useState([])
 
   const [mobileFilter , setMobileFilter] = useState(false)
 
@@ -28,6 +31,11 @@ const Shop = () => {
     setSliderValue(newValue);
     setAmountRange([convertToAmount(newValue[0]), convertToAmount(newValue[1])]);
   };
+
+
+  useEffect(() => {
+    // getAllProducts()
+  }, [])
 
 
 
@@ -221,6 +229,25 @@ const Shop = () => {
     };
 
 
+    // const getAllProducts = async() => {
+    //   try {
+    //     await axios.get(`${config.api}products/` , {
+    //       headers: {
+    //           "content-type": "application/json"
+    //       }
+    //   })
+    //   .then(response => {
+    //     console.log(response)
+    //     setAllProducts(response?.data?.data)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   })
+    //   }catch (error) {
+    //     console.log(error)
+    //   }
+    // }
+
   return (
     <div className="Shop">
       <div className="main-shop-section py-10">
@@ -246,7 +273,7 @@ const Shop = () => {
             <div className="inner-shop-section-1">
               <div className="shop-container">
                 <div className="grid grid-cols-12 gap-8 main-shopping-filter-grid-section">
-                  <div className={`left-filter-section col-span-3 ${mobileFilter ? 'active-mobile' : ''}`}>
+                  <div className={`left-filter-section col-span-3 ${mobileFilter ? 'active-mobile' : ''} overflow-y-auto h-full overflow-hidden`}>
                     <div className="shop-filter-main-section border border-Primary border-opacity-20 rounded-2xl p-5 sticky top-5">
                         <div className="top-filter-heading-shop flex items-center gap-4 justify-between border-b border-Primary border-opacity-20 pb-4 mb-4">
                           <h2 className='font-DMSans text-xl font-semibold text-Primary'>Fliter</h2>
@@ -384,12 +411,11 @@ const Shop = () => {
               </div>
             </div>
           </section>
-      {/* <div className="grid grid-cols-12">
+          {/* <div className="grid grid-cols-12">
               <div className="col-span-6">
                 <ImageGallery thumbnailPosition='left' showFullscreenButton={false} showPlayButton={false} items={images} />
               </div>
           </div> */}
-                    
         </div>
       </div>
     </div>

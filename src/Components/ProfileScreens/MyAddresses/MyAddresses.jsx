@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './MyAddresses.scss';
 import ProfileSideBar from '../ProfileSideBar/ProfileSideBar';
+import MobileTopBar from '../ProfileSideBar/MobileTopBar';
 
 const MyAddresses = () => {
 
@@ -17,9 +18,12 @@ const MyAddresses = () => {
               <div className="left-profile-sidebar-sec col-span-4">
                 <ProfileSideBar/>
               </div>
+              <div className="left-mobile-side-bar-section col-span-12">
+                <MobileTopBar/>
+              </div>
               <div className="right-profile-section bg-white rounded-3xl col-span-8 h-[696px] relative overflow-y-auto overflow-hidden">
                 <div className="inner-right-profile-section relative">
-                  <div className="top-add-address-sec flex  mb-5 items-center justify-between gap-4 z-[999] bg-white px-8 py-5 w-full sticky top-0">
+                  <div className="top-add-address-sec new-top-address-header-bar flex  mb-5 items-center justify-between gap-4 z-[999] bg-white px-8 py-5 w-full sticky top-0">
                     <h2 className='text-2xl font-Manrope font-bold '>ADDRESSES</h2>
                     {addressAdd ? 
                       <button type="button" onClick={() => setAddressAdd(false)} className='text-lg font-semibold text-red-500'><i className="bi bi-x-circle mr-2 text-red-500"></i> Cancel</button> : 

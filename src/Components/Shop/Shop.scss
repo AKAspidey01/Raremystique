@@ -26,6 +26,9 @@
         transition-duration: 0.3s;
         background: white;
         z-index: 999;
+        overflow: hidden;
+        overflow-y: auto !important;
+        height: 100% !important;
         &.active-mobile {
             left: 0;
         }

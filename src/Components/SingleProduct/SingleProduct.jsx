@@ -200,18 +200,18 @@ const SingleProduct = () =>{
                 <div className="grid grid-cols-12 single-product-grid-section-1 gap-10">
                   <div className="left-product-showcase-section col-span-6 h-full">
                     <div className="grid grid-cols-12 product-show-case-grid gap-5 h-full">
-                      <div className="thumbnails-section-product col-span-3">
+                      <div className="thumbnails-section-product col-span-3 thumbnail-section-1">
                        <div className="all-thumbs-group-section flex flex-col gap-y-4 justify-between h-full">
-                        {productImages.map((items , index) => {
-                            return (
-                              <button className={`single-product-thumbnail h-44 border-2  rounded-2xl overflow-hidden duration-300 ${selectedImg.name === items?.name ? 'border-Primary shadow-xl' : 'border-transparent'}`} onClick={() => setSelectedImg(items)} key={index}>
-                                <img src={items?.image} alt="" className='w-full object-cover'/>
-                              </button>
-                            )
-                        })}
+                          {productImages.map((items , index) => {
+                              return (
+                                <button className={`single-product-thumbnail small-thumnails-section h-44 border-2  rounded-2xl overflow-hidden duration-300 ${selectedImg.name === items?.name ? 'border-Primary shadow-xl' : 'border-transparent'}`} onClick={() => setSelectedImg(items)} key={index}>
+                                  <img src={items?.image} alt="" className='w-full object-cover'/>
+                                </button>
+                              )
+                          })}
                        </div>
                       </div>
-                      <div className="thumbnails-section-product col-span-9">
+                      <div className="thumbnails-section-product col-span-9 thumbnail-section-2">
                           <div className="single-product-thumbnail h-full max-h-[574px] overflow-hidden rounded-2xl">
                             <img src={selectedImg?.image} alt="" className='h-full w-full object-cover duration-500 transition-all'/>
                           </div>
@@ -276,7 +276,7 @@ const SingleProduct = () =>{
                       </div>
                     </div>
                     <div className="quantity-selector add-cart-button-section grid grid-cols-12 gap-5 pt-6">
-                      <div className="col-span-3">
+                      <div className="col-span-3 quantity-column-sec">
                         <div className="qunatity-selector bg-[#F0F0F0] rounded-full flex items-center p-2 gap-3">
                             <button type="button" onClick={handleDecrement} className="minus w-10 h-10 flex items-center justify-center">
                               <i className="ri-subtract-line text-Primary text-2xl"></i>

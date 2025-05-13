@@ -1,1 +1,52 @@
 .MyAddresses {}
+
+
+@media only screen and (max-width: 674px) {
+    .MyAddresses {
+        .single-address-section-blk {
+            grid-column: span 12/ span 12;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 474px) {
+    
+    .MyAddresses {
+         .profile-page-form-section {
+            padding: 0px !important;
+        }
+    }
+    .new-top-address-header-bar {
+        padding: 0px !important;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .profile-page-form-section {
+        .inner-login-form-sec  {
+            gap: 24px 0px;
+            .inner-input-section  {
+                input {
+                    padding: 8px 15px;
+                    border-radius: 8px;
+                    font-size: 16px;
+                }
+            }
+        }
+        .form-inputsec {
+            grid-column: span 12 / span 12;
+        
+        }
+        .gender-section-outer-flex {
+            flex-direction: column;
+            align-items: baseline;
+            gap: 12px 0px;
+        }
+    }
+    .inner-right-profile-section  {
+        padding: 20px;
+    }
+    .inner-addressbg-section {
+        padding: 30px 0px;
+    }
+}

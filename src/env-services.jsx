@@ -1,6 +1,6 @@
 
 const config = {
-    api: "https://stage-api.localmart.app:8443/",
+    api: "https://tryfew.in/erenjeager/public/api/captain/",
     // api: "http://localhost:8142/api/v1/",
     options: {
       headers: {

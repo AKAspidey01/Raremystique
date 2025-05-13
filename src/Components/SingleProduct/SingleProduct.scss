@@ -61,3 +61,117 @@
   .right-button.activer-plus {
     transform: rotate(180deg);
   }
+
+
+    @media only screen and (max-width: 991.90px) {
+    .single-product-grid-section-1 {
+      .product-show-case-grid  {
+        gap: 20px 40px;
+      }
+      .left-product-showcase-section , .right-product-info-section {
+        grid-column: span 12 / span 12;
+      }
+    }
+    .product-info-tags  {
+      .single-product-info-tag {
+        grid-column: span 2 / span 2;
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: 674.90px) {
+    .single-product-grid-section-1 {
+      gap: 40px 0px;
+      .product-show-case-grid  {
+        gap: 20px 0px;
+      }
+    }
+    .single-rating-profile  {
+      grid-column: span 6 / span 6;
+    }
+    .product-show-case-grid {
+      .thumbnails-section-product {
+        grid-column: span 12 / span 12;
+      }
+      .thumbnail-section-1 {
+        order: 2;
+        .all-thumbs-group-section {
+          flex-direction: row;
+          gap: 20px 20px ;
+          justify-content: left;
+          flex-wrap: wrap;
+        }
+      }
+      .thumbnail-section-2 {
+        order: 1;
+      }
+    }
+    .add-cart-button-section {
+      .quantity-column-sec , .right-add-cart-button{
+        grid-column: span 6 / span 6 !important;
+        .qunatity-selector {
+          width: fit-content;
+        }
+      }
+    }
+    .single-tab-button {
+      button {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    .faqs-tabs-desc {
+      width: 100% !important;
+    }
+    .about-accordion-content p{
+      font-size: 16px;
+    }
+    .about-accordion-header h2 {
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 574px) {
+    .prod-head {
+      h2 {
+        font-size: 24px;
+        line-height: 34px;
+      }
+    }
+    .actual-offer-price {
+      h3 {
+        font-size: 30px;
+      }
+    }
+    .right-product-info-section  {
+      .product-decription { 
+        p {
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+      }
+    }
+    .product-info-tags  {
+      .single-product-info-tag {
+        grid-column: span 3 / span 3;
+      }
+    }
+    .single-rating-profile  {
+      grid-column: span 12 / span 12;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+     .add-cart-button-section {
+      .quantity-column-sec , .right-add-cart-button{
+        grid-column: span 12 / span 12 !important;
+      }
+    }
+    .small-thumnails-section {
+      height: 100px !important;
+      border-width: 1px !important;
+      border-radius: 10px !important;
+    }
+  }

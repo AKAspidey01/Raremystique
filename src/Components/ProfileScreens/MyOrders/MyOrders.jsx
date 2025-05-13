@@ -6,6 +6,7 @@ import BrownShirt from '../../../assets/images/dummy-prod-front.jpg';
 import BrownBack from '../../../assets/images/dummy-prod-back.jpg';
 import BrownFull from '../../../assets/images/dummy-prod-full.jpg';
 import { useNavigate } from 'react-router-dom';
+import MobileTopBar from '../ProfileSideBar/MobileTopBar';
 
 const MyOrders = () => {
 
@@ -54,6 +55,9 @@ const MyOrders = () => {
             <div className="grid grid-cols-12 profile-grid-section gap-8">
               <div className="left-profile-sidebar-sec col-span-4">
                 <ProfileSideBar/>
+              </div>
+              <div className="left-mobile-side-bar-section col-span-12">
+                <MobileTopBar/>
               </div>
               <div className="right-profile-section bg-white rounded-3xl col-span-8 h-[696px] relative overflow-y-auto overflow-hidden">
                 <div className="inner-right-profile-section relative">
