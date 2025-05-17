@@ -145,7 +145,7 @@ const Cart = () => {
                     )
                   })}
                 </div>
-                <div className="col-span-5 right-pricing-details-sec-cart ">
+                <div className="col-span-5 right-pricing-details-sec-cart relative">
                   <div className="shop-summary-main-section border-Primary border-opacity-20 rounded-2xl border p-5 sticky top-5">
                     <h2 className='font-semibold text-xl mb-5'>Shop Summary</h2>
                     <div className="order-detais-section flex flex-col gap-3">

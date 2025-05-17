@@ -3,11 +3,12 @@ import './Footer.scss';
 import face from '../../assets/images/Facebook.svg';
 import insta from '../../assets/images/Instagram.svg';
 import telegram from '../../assets/images/social-media/telegram.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/logo.svg'
 
 const Footer = () => {
   
+  const navigate = useNavigate()
 
   const socialNavs = [
     {
@@ -26,6 +27,9 @@ const Footer = () => {
       link: 'https://t.me/akaspidey'
     },
   ]
+
+
+  
 
   return (
     <div className="Footer">
@@ -53,7 +57,7 @@ const Footer = () => {
                               <div className="bio-logo-section col-span-4 h-full">
                                   <div className="footer-logo flex flex-col justify-between h-full">
                                     <div className="top-footer-left-logo-part">
-                                      <button className="sidemenu-logo-inner flex group">
+                                      <button className="sidemenu-logo-inner flex group" onClick={() => navigate('/')}>
                                         {/* stroke="#040C0C" */}
                                         <img src={Logo} className='max-w-64' alt="" />
                                       </button>
@@ -88,6 +92,7 @@ const Footer = () => {
                                         {/* <h2 className='font-semibold font-Poppins text-white'>Home</h2> */}
                                         <nav>
                                           <ul className='flex flex-col gap-4'>
+                                            <li><NavLink className='font-Rubik text-white font-medium'to={'/'}>Home</NavLink></li>
                                             <li><NavLink className='font-Rubik text-white font-medium'to={'/about-us'}>About Us</NavLink></li>
                                             <li><NavLink className='font-Rubik text-white font-medium' to={'/shop'}>Shop</NavLink></li>
                                             <li><NavLink className='font-Rubik text-white font-medium' to={'/contact-us'}>Contact Us</NavLink></li>
@@ -100,6 +105,7 @@ const Footer = () => {
                                             <li><a href="mailto:raremystiquein@gmail.com" className='font-Rubik text-white font-medium'>Mail Us: raremystiquein@gmail.com</a></li>
                                             <li><a href="tel:+919014579785" className='font-Rubik text-white font-medium'>Call us: +91 9014579785</a></li>
                                             <li><a href="https://maps.app.goo.gl/nZZSnxGXukRrVPmp6" className='font-Rubik text-white font-medium' target='_blank'>Kakinada, Andhra Pradesh</a></li>
+                                            <li><a href="https://maps.app.goo.gl/nZZSnxGXukRrVPmp6" className='font-Rubik text-white font-medium' target='_blank'>India</a></li>
                                           </ul>
                                         </nav>
                                     </div>
@@ -108,7 +114,8 @@ const Footer = () => {
                                           <ul className='flex flex-col gap-4'>
                                             <li><NavLink className='font-Rubik text-white font-medium' to={'/terms-conditions'}>Terms & Conditions</NavLink></li>
                                             <li><NavLink className='font-Rubik text-white font-medium' to={'/privacy-policy'}>Privacy Policy</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/refund-policy'}>Refund Policy</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/refund-policy'}>Cancellation & Refund</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/shipping-policy'}>Shipping Policy</NavLink></li>
                                           </ul>
                                         </nav>
                                     </div>

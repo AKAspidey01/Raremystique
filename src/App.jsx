@@ -23,6 +23,7 @@ import OrderDetails from './Components/ProfileScreens/MyOrders/OrderDetails';
 import PrivacyPolicy from './Components/PolicyPages/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './Components/PolicyPages/TermsConditions/TermsConditions';
 import RefundPolicy from './Components/PolicyPages/RefundPolicy/RefundPolicy';
+import ShippingPolicy from './Components/PolicyPages/ShippingPolicy/ShippingPolicy';
 
 
 
@@ -42,6 +43,7 @@ const Layout = () => {
           <Route exact={true} Component={TermsConditions} path='/terms-conditions'/>
           <Route exact={true} Component={PrivacyPolicy} path='/privacy-policy'/>
           <Route exact={true} Component={RefundPolicy} path='/refund-policy'/>
+          <Route exact={true} Component={ShippingPolicy} path='/shipping-policy'/>
 
           <Route Component={ProtectedRoutes}>
             <Route exact={true} Component={MyProfile} path='/profile'/>
