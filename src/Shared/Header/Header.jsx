@@ -98,7 +98,7 @@ const Header = () => {
                     <i className="bi bi-cart3 text-white text-2xl "></i>
                   </button> 
                 </div> : null }
-                <div className="profile-button">
+                <div className="profile-button hidden">
                   <button type="button" onClick={() => navigate('/profile')}>
                     <i className="bi bi-person-circle text-white text-2xl"></i>
                   </button>

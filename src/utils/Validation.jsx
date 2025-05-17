@@ -11,5 +11,5 @@ export const contactFormValidation = yup.object().shape({
     email:  yup.string().email('Please Enter Valid Email').required('Email Address Required'),
     mobileNumber: yup.number().required('Please Enter Your Mobile Number').min(10 , "Minimum 10 Digits"),
     subject: yup.string().required('Please Enter Subject'),
-    message:  yup.string().required('Please Enter Complete Address'),
+    message:  yup.string().notRequired(''),
 })

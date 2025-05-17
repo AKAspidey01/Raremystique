@@ -36,25 +36,54 @@ const AboutUs = () => {
       {
         name: 'Whatsapp',
         icon: WhatsApp ,
-        desc: 'Click to Chat, 24/7 Support'
+        desc: 'Click to Chat, 24/7 Support',
+        platform: 'whatsapp'
       },
       {
         name: 'Telegram',
         icon: Telegram ,
-        desc: 'We are available on Telegram'
+        desc: 'We are available on Telegram',
+        platform: 'telegram'
       },
       {
         name: 'Instagram',
         icon: Instagram ,
-        desc: 'Follow us (raremystique_in)'
+        desc: 'Follow us (raremystique.in)',
+        platform: 'instagram'
       },
       {
         name: 'Facebook',
         icon: Facebbok ,
-        desc: 'Follow us (raremystique_in)'
+        desc: 'Follow us (raremystique_in)',
+        platform: 'facebook'
       },
     ]
 
+
+
+    const shareLink = (platform) => {
+      let shareUrl = "";
+
+      switch (platform) {
+        case "whatsapp":
+          shareUrl = `https://wa.me/919014579785`;
+          break;
+        case "telegram":                
+          shareUrl = `https://t.me/akaspidey`;
+          break;
+        case "instagram":
+          shareUrl = `https://www.instagram.com/raremystique.in/`;
+          break;
+        case "facebook":
+          shareUrl = `https://www.facebook.com/profile.php?id=61576302362508`;
+          break;
+        default:
+          alert("Invalid platform");
+          return;
+      }
+
+       window.open(shareUrl, "_blank");
+    }
 
     const team = [
       {
@@ -174,7 +203,7 @@ const AboutUs = () => {
                 <div className="bottom-social-media-section-grid grid grid-cols-12 mt-8 gap-5">
                     {contactSocials.map((items , index) => {
                       return (
-                        <button type='button'  className="single-social-media-block col-span-3 bg-white p-5 rounded-xl text-left" key={index}>
+                        <button type='button'  className="single-social-media-block col-span-3 bg-white p-5 rounded-xl text-left" onClick={() => shareLink(items.platform)} key={index}>
                           <div className="inner-single-social flex items-center gap-5">
                             <div className="left-icon-social">
                               <img src={items.icon} className='w-[50px] h-[50px]' alt="" />

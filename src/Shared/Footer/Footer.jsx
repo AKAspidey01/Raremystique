@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss';
 import face from '../../assets/images/Facebook.svg';
 import insta from '../../assets/images/Instagram.svg';
-import twit from '../../assets/images/twitter.svg';
+import telegram from '../../assets/images/social-media/telegram.svg';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/logo.svg'
 
@@ -13,17 +13,17 @@ const Footer = () => {
     {
       title: 'Facebook',
       icon: face,
-      link: 'https://www.facebook.com/profile.php?id=100016726062844'
+      link: 'https://www.facebook.com/profile.php?id=61576302362508'
     },
     {
       title: 'Instagram',
       icon: insta,
-      link: 'https://www.instagram.com/sg_codes/profilecard/?igsh=MTUwb3o1N2MzZTE2bw=='
+      link: 'https://www.instagram.com/raremystique.in/'
     },
     {
-      title: 'Twitter',
-      icon: twit,
-      link: 'https://x.com/and_i_am_Ganesh?t=HqhiXtuEWztu7URPC46p3Q&s=09'
+      title: 'Telegram',
+      icon: telegram,
+      link: 'https://t.me/akaspidey'
     },
   ]
 
@@ -88,33 +88,27 @@ const Footer = () => {
                                         {/* <h2 className='font-semibold font-Poppins text-white'>Home</h2> */}
                                         <nav>
                                           <ul className='flex flex-col gap-4'>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Home</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>About Us</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Shop</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Support Us</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Contact Us</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium'to={'/about-us'}>About Us</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/shop'}>Shop</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/contact-us'}>Contact Us</NavLink></li>
                                           </ul>
                                         </nav>
                                     </div>
                                     <div className="menu-navigation-section footer-menu-2 similar-footer-menu-sections col-span-2">
                                         <nav>
                                           <ul className='flex flex-col gap-4'>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Men</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Women</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Best Sellers</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>New Arrivals</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Combos</NavLink></li>
+                                            <li><a href="mailto:raremystiquein@gmail.com" className='font-Rubik text-white font-medium'>Mail Us: raremystiquein@gmail.com</a></li>
+                                            <li><a href="tel:+919014579785" className='font-Rubik text-white font-medium'>Call us: +91 9014579785</a></li>
+                                            <li><a href="https://maps.app.goo.gl/nZZSnxGXukRrVPmp6" className='font-Rubik text-white font-medium' target='_blank'>Kakinada, Andhra Pradesh</a></li>
                                           </ul>
                                         </nav>
                                     </div>
                                     <div className="menu-navigation-section footer-menu-2 pr-10 col-span-2 last-footer-menu-section">
                                         <nav>
                                           <ul className='flex flex-col gap-4'>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Terms & Conditions</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Privacy Policy</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Refund Policy</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Cancellation Policy</NavLink></li>
-                                            <li><NavLink className='font-Rubik text-white font-medium'>Shipping Policy</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/terms-conditions'}>Terms & Conditions</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/privacy-policy'}>Privacy Policy</NavLink></li>
+                                            <li><NavLink className='font-Rubik text-white font-medium' to={'/refund-policy'}>Refund Policy</NavLink></li>
                                           </ul>
                                         </nav>
                                     </div>

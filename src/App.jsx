@@ -20,6 +20,9 @@ import MyProfile from './Components/ProfileScreens/MyProfile/MyProfile';
 import MyOrders from './Components/ProfileScreens/MyOrders/MyOrders';
 import MyAddresses from './Components/ProfileScreens/MyAddresses/MyAddresses';
 import OrderDetails from './Components/ProfileScreens/MyOrders/OrderDetails';
+import PrivacyPolicy from './Components/PolicyPages/PrivacyPolicy/PrivacyPolicy';
+import TermsConditions from './Components/PolicyPages/TermsConditions/TermsConditions';
+import RefundPolicy from './Components/PolicyPages/RefundPolicy/RefundPolicy';
 
 
 
@@ -28,6 +31,7 @@ const Layout = () => {
     <div className='App'>
       <AuthProvider>
         <HeaderWrapper/>
+        <ScrollToTop/>
         <Routes>
           <Route exact={true} Component={Home} path='/'/>
           <Route exact={true} Component={Login} path='/login'/>
@@ -35,6 +39,9 @@ const Layout = () => {
           <Route exact={true} Component={Shop} path='/shop'/>
           <Route exact={true} Component={SingleProduct} path='/shop/single-product'/>
           <Route exact={true} Component={Contactus} path='/contact-us'/>
+          <Route exact={true} Component={TermsConditions} path='/terms-conditions'/>
+          <Route exact={true} Component={PrivacyPolicy} path='/privacy-policy'/>
+          <Route exact={true} Component={RefundPolicy} path='/refund-policy'/>
 
           <Route Component={ProtectedRoutes}>
             <Route exact={true} Component={MyProfile} path='/profile'/>
@@ -56,7 +63,6 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop/>
       <Layout/>
       <Toaster 
           position="top-center"
