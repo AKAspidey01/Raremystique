@@ -21,7 +21,7 @@ const OrderDetails = () => {
                 <div className="inner-right-profile-section relative">
                   <div className="top-add-address-sec top-order-detail-backsec flex  items-center justify-between gap-4 z-[999] bg-white px-8 py-5 w-full sticky top-0">
                     <div className="backbutton-header flex items-center gap-x-4">
-                      <button type="button" onClick={() => navigate(-1)} className='w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center'><i class="bi bi-arrow-left-short text-2xl"></i></button>
+                      <button type="button" onClick={() => navigate(-1)} className='w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center'><i className="bi bi-arrow-left-short text-2xl"></i></button>
                       <h2 className='text-2xl font-Manrope font-bold '>ORDER DETAILS</h2>
                     </div>
                     <p>Ordered On : <span className='text-lg'>10 Mar 2025</span></p>
@@ -30,7 +30,7 @@ const OrderDetails = () => {
                     <div className="top-order-destination-section border relative flex flex-col gap-y-8 border-Primary border-opacity-20 rounded-3xl p-5">
                         <div className="top-pikup-point-section relative z-10 flex items-center gap-x-5">
                             <div className="left-pickup-icon w-10 h-10 flex items-center justify-center bg-emerald-500 border border-emerald-500  rounded-full">
-                                <i class="bi text-xl bi-arrow-down text-white "></i>
+                                <i className="bi text-xl bi-arrow-down text-white "></i>
                             </div>
                             <div className="right-pickup-details-section">
                                 <h6 className='text-lg font-medium'>Rare Mystique Warehouse</h6>
@@ -39,7 +39,7 @@ const OrderDetails = () => {
                         </div>
                         <div className="top-pikup-point-section relative z-10 flex items-center gap-x-5">
                             <div className="left-pickup-icon w-10 h-10 flex items-center justify-center border border-Primary border-opacity-20 bg-white rounded-full">
-                                <i class="bi bi-geo-alt-fill text-xl text-Primary "></i>
+                                <i className="bi bi-geo-alt-fill text-xl text-Primary "></i>
                             </div>
                             <div className="right-pickup-details-section">
                                 <h6 className='text-lg font-medium'>327 Avenue , 3rd street ....</h6>

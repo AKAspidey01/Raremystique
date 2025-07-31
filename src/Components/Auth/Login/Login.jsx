@@ -58,7 +58,7 @@ const Login = () => {
                                     className={`outline-none border focus:border-black focus:bg-white duration-300 py-4 pl-14 pr-5 text-lg rounded-xl ${errors.email && touched.email ? 'border-red-500 border-opacity-100 bg-red-500 bg-opacity-10 placeholder:text-red-500 text-red-500' : 'text-black bg-gray-200 bg-opacity-50 placeholder:text-black'}`} 
                                 />                                
                                 <div className="email-input-icon flex items-center justify-center absolute left-7 top-1/2 w-[50px] ">
-                                  <i class="bi bi-envelope text-2xl"></i>
+                                  <i className="bi bi-envelope text-2xl"></i>
                                 </div>
                             </div>
                             <div className="password-forgot-password-section">
@@ -67,7 +67,7 @@ const Login = () => {
                                       className={`outline-none border focus:border-black focus:bg-white duration-300 py-4 pl-14 pr-5 text-lg  rounded-xl ${errors.password && touched.password ? 'border-red-500 border-opacity-100 bg-red-500 bg-opacity-10 placeholder:text-red-500 text-red-500' : 'text-black bg-gray-200 bg-opacity-50 placeholder:text-black'}`} 
                                   />                                
                                   <div className="email-input-icon w-[50px] flex items-center justify-center absolute left-7 top-1/2">
-                                    <i class="bi bi-shield-lock text-2xl"></i>
+                                    <i className="bi bi-shield-lock text-2xl"></i>
                                   </div>
                                   <button type="button" className="email-input-icon password-login-icon owa absolute right-4 top-1/2" onClick={() => setPasswordHandle(!passwordHandle)}>
                                     <i className={`${passwordHandle ? 'ri-eye-off-line' : 'ri-eye-line'} text-xl text-LightText`}></i>

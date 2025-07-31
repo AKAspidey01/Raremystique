@@ -332,7 +332,7 @@ const Shop = () => {
                                 return (
                                   <button type="button" className={`w-10 h-10 rounded-full overflow-hidden border-2 border-opacity-20 border-Primary`} onClick={() => setColorSelect(items?.value)} style={{background: items?.color}} key={index}>
                                       <div className={`inner-icon w-full h-full flex items-center justify-center bg-Primary bg-opacity-20 duration-500 ${colorSelect === items?.value ? 'visible opacity-100' : 'invisible opacity-0'}`}>
-                                        <i class="ri-check-line text-xl text-white"></i>
+                                        <i className="ri-check-line text-xl text-white"></i>
                                       </div>
                                   </button>    
                                 )
@@ -396,7 +396,7 @@ const Shop = () => {
                               </div>
                               <div className="cart-sec similar-cart-buttons absolute top-[70px] -right-4 group-hover:right-4 opacity-0 delay-200  group-hover:opacity-100 duration-500">
                                 <button type="button" className='w-10 h-10 relative z-10 bg-white shadow-xl rounded-full flex items-center justify-center'>
-                                  <i class="ri-shopping-cart-line text-2xl"></i>
+                                  <i className="ri-shopping-cart-line text-2xl"></i>
                                 </button>
                               </div>
                             </button>

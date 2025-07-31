@@ -5,11 +5,15 @@ import { NavLink } from 'react-router-dom';
 import BrownShirt from '../../assets/images/dummy-prod-front.jpg';
 import BlackShirt from '../../assets/images/shirt-image-dummy.jpg';
 import toast from 'react-hot-toast';
+import { useRazorpay } from 'react-razorpay';
 
 
 const Cart = () => {
 
   const [count , setCount] = useState(1);
+
+  const razorPayKeyId = import.meta.env.VITE_RZP_TEST_KEY_ID;
+  const razorPaySecret = import.meta.env.VITE_RZP_KEY_SECRET
 
   // const handleIncrement = () => {
   //   if (count >= 10) {
@@ -90,6 +94,35 @@ const Cart = () => {
     );
   };
 
+const loadRazorpay = () => {
+    const options = {
+      key: razorPayKeyId, // Replace with your Test Key ID from Razorpay dashboard
+      amount: 50000, // Amount in paisa = INR 500.00
+      currency: 'INR',
+      name: 'Test Company',
+      description: 'Test Transaction',
+      image: '../../assets/images/logo.svg',
+      // order_id: 'order_ID_generated_in_backend', // You can omit this for testing frontend flow only
+      handler: function (response) {
+        alert(`Payment successful!
+Payment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: 'Test User',
+        email: 'test.user@example.com',
+        contact: '9999999999',
+      },
+      notes: {
+        address: 'Test Address',
+      },
+      theme: {
+        color: '#1F90FF',
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
 
 
 
@@ -169,7 +202,7 @@ const Cart = () => {
                       </div>
                     </div>
                     <div className="proceed-to-checkout">
-                      <button type="button" className='text-white font-semibold bg-Primary w-full py-3 px-4 text-center rounded-full'>Go to Checkout</button>
+                      <button type="button" onClick={loadRazorpay} className='text-white font-semibold bg-Primary w-full py-3 px-4 text-center rounded-full'>Go to Checkout</button>
                     </div>
                   </div>
                 </div>

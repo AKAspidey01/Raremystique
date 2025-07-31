@@ -239,7 +239,7 @@ const Contactus = () => {
           </div>
         </div>
       </section>
-      <section class="shipping-info bg-white py-16 contact-section-2">
+      <section className="shipping-info bg-white py-16 contact-section-2">
         <div className="container">
           <div className="inner-contact-form-heading-section flex gap-4 items-center">
             <img src={Sparkle} className='w-8 h-8' alt="" />

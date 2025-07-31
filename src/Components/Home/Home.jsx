@@ -24,6 +24,21 @@ const Home = () => {
   // const plugins = [new Perspective({ rotate: 0.5 }) , new AutoPlay ({ duration: 2000, direction: "NEXT", stopOnHover: true })];
   // const autoplayPlug = [new AutoPlay ({ duration: 2000, direction: "NEXT", stopOnHover: true })];
 
+  
+  const razorPayKeyId = import.meta.env.VITE_RZP_TEST_KEY_ID;
+  const razorPaySecret = import.meta.env.VITE_RZP_KEY_SECRET
+
+  const numCards = 24;
+  const radius = 900; // adjust for spacing
+  const cardWidth = 300;
+  const cardHeight = 450;
+
+  const cards = Array.from({ length: numCards });
+
+
+
+  console.log(razorPayKeyId , razorPaySecret)
+
   const navigate = useNavigate()
 
   const bannerCards = [
@@ -173,7 +188,7 @@ const Home = () => {
   ]
 
 
-    const radius = 800;
+    // const radius = 800;
     const rotationStepDegrees = 15; // The rotation increment for each card
     const rotationStepRadians = rotationStepDegrees * Math.PI / 180;
     const itemCount = bannerCards.length;
@@ -200,12 +215,74 @@ const Home = () => {
                     <button type="button" onClick={() => navigate('/shop')} className='h-12 bg-white rounded-full flex items-center gap-4 pl-5 pr-1 mx-auto'>
                       <p className='text-Primary font-Poppins font-medium text-lg'>Discover More</p> 
                       <div className="right-icon-discover w-10 h-10 rounded-full flex items-center justify-center bg-Primary">
-                        <i class="bi bi-arrow-right text-xl text-white"></i>
+                        <i className="bi bi-arrow-right text-xl text-white"></i>
                       </div> 
                     </button>
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="h-abs h-[1200px] w-full absolute top-1/2 hidden">
+              {cards.map((_ , i) => {
+              const angle = (360 / numCards) * i;
+              const radians = (angle * Math.PI) / 180;
+              const x = radius * Math.cos(radians);
+              const y = radius * Math.sin(radians);
+
+              const slightRotation = -10 + (20 * (i / numCards)); // from -10° to +10°
+              return (
+                <div 
+                  key={i}
+                  className="absolute"
+                  style={{
+                      left: `calc(50% - ${cardWidth / 2}px)`,
+                      top: `calc(50% - ${cardHeight / 2}px)`,
+                      transform: `translate(${x}px, ${y}px) rotate(${slightRotation}deg)`,
+                      transformOrigin: 'center center',
+                      width: `${cardWidth}px`,
+                      height: `${cardHeight}px`,
+                    }}
+                  onClick={() => navigate('/shop/single-product')}>
+                  <div className="relative overflow-hidden z-10 group text-left">
+                    <div className="inner-single-fashion-card overflow-hidden">
+                        <div className="top-cloth-image-section relative ">
+                          <img src={ShirtImage} className='max-h-[450px] rounded-2xl object-cover flex' alt="" />
+                          <div className="colors-section-button flex items-center gap-[10px] absolute bottom-4 bg-white rounded-full p-2 left-4 opacity-0 group-hover:opacity-100 duration-500">
+                            <button type="button" className='w-4 h-4 rounded-full bg-red-500 border border-gray-500'></button>
+                            <button type="button" className='w-4 h-4 rounded-full bg-violet-500 border border-gray-500'></button>
+                            <button type="button" className='w-4 h-4 rounded-full bg-white border border-gray-300'></button>
+                            <button type="button" className='w-4 h-4 rounded-full bg-orange-500 border border-gray-500'></button>
+                          </div>
+                        </div>
+                        <div className="bottom-details-section py-3">
+                          <div className="left-pricing-details flex items-center justify-between gap-4">
+                            <p className='text-lg font-semibold text-white mb-1'>{"Classic Printed Shirt"}</p>
+                            <h4 className='font-Manrope text-xl font-semibold text-green-500'>{"₹ 699"} <span className='line-through text-sm text-Primary opacity-50 hidden'>{"₹ 999"}</span></h4>
+                          </div>
+                        </div>
+                    </div>
+                    <div className="right-rating-sec flex items-center shadow-xl gap-x-2 bg-white rounded-full absolute top-4 left-4 px-2">
+                        <div className="star">
+                          <i className="ri-star-fill text-lg text-[#FFA600]"></i>
+                        </div>
+                        <div className="rating-text">
+                          <p className='text-Primary font-medium'>{"4.1"}</p>
+                        </div>
+                    </div>
+                    <div className="wishlist-sec mb-4 absolute top-4 -right-4 opacity-0 group-hover:right-4  group-hover:opacity-100 duration-500">
+                      <button type="button" className='w-10 h-10 relative z-10 bg-white shadow-xl rounded-full flex items-center justify-center'>
+                        <i className="ri-heart-line text-2xl flex"></i>
+                      </button>
+                    </div>
+                    <div className="cart-sec absolute top-[70px] -right-4 group-hover:right-4 opacity-0 delay-200  group-hover:opacity-100 duration-500">
+                      <button type="button" className='w-10 h-10 relative z-10 bg-white shadow-xl rounded-full flex items-center justify-center'>
+                        <i className="ri-shopping-cart-line text-2xl"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
             </div>
             <div className="home-banner-slider-sec mt-20">
               <Swiper 
@@ -251,7 +328,7 @@ const Home = () => {
                 {bannerCards.map((items , index) => {
                     return (
                       <SwiperSlide key={index}>
-                          <button className="single-fashion-card relative overflow-hidden z-10 group text-left" onClick={() => navigate('/shop/single-product')}>
+                          <div className="single-fashion-card relative overflow-hidden z-10 group text-left cursor-pointer" onClick={() => navigate('/shop/single-product')}>
                             <div className="inner-single-fashion-card overflow-hidden">
                                 <div className="top-cloth-image-section relative ">
                                   <img src={items.image} className='max-h-[450px] rounded-2xl object-cover flex' alt="" />
@@ -284,10 +361,10 @@ const Home = () => {
                             </div>
                             <div className="cart-sec absolute top-[70px] -right-4 group-hover:right-4 opacity-0 delay-200  group-hover:opacity-100 duration-500">
                               <button type="button" className='w-10 h-10 relative z-10 bg-white shadow-xl rounded-full flex items-center justify-center'>
-                                <i class="ri-shopping-cart-line text-2xl"></i>
+                                <i className="ri-shopping-cart-line text-2xl"></i>
                               </button>
                             </div>
-                          </button>
+                          </div>
                       </SwiperSlide>
                     )
                 })}
@@ -340,7 +417,7 @@ const Home = () => {
                           </div>
                           <div className="cart-sec absolute top-[70px] -right-4 group-hover:right-4 opacity-0 delay-200  group-hover:opacity-100 duration-500">
                             <button type="button" className='w-10 h-10 relative z-10 bg-white shadow-xl rounded-full flex items-center justify-center'>
-                              <i class="ri-shopping-cart-line text-2xl"></i>
+                              <i className="ri-shopping-cart-line text-2xl"></i>
                             </button>
                           </div>
                     </div>
@@ -363,7 +440,7 @@ const Home = () => {
                   <div className="grid grid-cols-3 gap-8 our-bestsellers-card-grid">
                     {bestSellerCards.map((items , index) => {
                         return (
-                          <button type='button' className="single-fashion-card text-left relative z-10 group" onClick={() => navigate('/shop/single-product')} key={index}>
+                          <div type='button' className="single-fashion-card text-left relative z-10 group cursor-pointer" onClick={() => navigate('/shop/single-product')} key={index}>
                             <div className="inner-single-fashion-card overflow-hidden">
                                 <div className="top-cloth-image-section relative overflow-hidden rounded-2xl">
                                   <img src={items.image} className='max-h-[450px] duration-300 group-hover:scale-110 object-cover flex' alt="" />
@@ -396,10 +473,10 @@ const Home = () => {
                             </div>
                             <div className="cart-sec similar-cart-buttons absolute top-[70px] -right-4 group-hover:right-4 opacity-0 delay-200  group-hover:opacity-100 duration-500">
                               <button type="button" className='w-10 h-10 relative z-10 bg-white shadow-xl rounded-full flex items-center justify-center'>
-                                <i class="ri-shopping-cart-line text-2xl"></i>
+                                <i className="ri-shopping-cart-line text-2xl"></i>
                               </button>
                             </div>
-                          </button>
+                          </div>
                         )
                     })}
                   </div>
@@ -422,7 +499,7 @@ const Home = () => {
                     </div>
                     <button type="button" onClick={() => navigate('/shop')} className='h-12 bg-white rounded-full flex items-center gap-4 pl-5 pr-5 mt-6'>
                         <p className='text-Primary font-Poppins font-medium'>Shop Now</p> 
-                        <i class="bi bi-arrow-right text-xl text-Primary"></i>
+                        <i className="bi bi-arrow-right text-xl text-Primary"></i>
                     </button>
                   </div>
                   <div className="banner-right-image absolute right-4 bottom-0">

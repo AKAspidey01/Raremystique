@@ -254,7 +254,7 @@ const SingleProduct = () =>{
                           return (
                             <button type="button" className={`w-10 h-10 rounded-full overflow-hidden border-2 border-opacity-20 border-Primary`} onClick={() => setColorSelect(items)} style={{background: items?.color}} key={index}>
                                 <div className={`inner-icon w-full h-full flex items-center justify-center bg-Primary bg-opacity-20 duration-500 ${colorSelect?.value === items?.value ? 'visible opacity-100' : 'invisible opacity-0'}`}>
-                                  <i class="ri-check-line text-xl text-white"></i>
+                                  <i className="ri-check-line text-xl text-white"></i>
                                 </div>
                             </button>    
                           )
