@@ -24,6 +24,7 @@ import PrivacyPolicy from './Components/PolicyPages/PrivacyPolicy/PrivacyPolicy'
 import TermsConditions from './Components/PolicyPages/TermsConditions/TermsConditions';
 import RefundPolicy from './Components/PolicyPages/RefundPolicy/RefundPolicy';
 import ShippingPolicy from './Components/PolicyPages/ShippingPolicy/ShippingPolicy';
+import SmoothScrollProvider from './utils/ReactLenisProvider';
 
 
 
@@ -64,34 +65,36 @@ function App() {
 
 
   return (
-    <Router>
-      <Layout/>
-      <Toaster 
-          position="top-center"
-          reverseOrder={false}
-          gutter={12}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            className: '',
-            duration: 5000,
-            style: {
-              background: '#101010',
-              color: '#fff',
-              fontFamily: 'Poppins',
-              paddingRight: 15,
-              paddingLeft: 15,
-            },
-            success: {
-              duration: 3000,
-              theme: {
-                primary: 'green',
-                secondary: 'black',
+    <SmoothScrollProvider>
+      <Router>
+        <Layout/>
+        <Toaster 
+            position="top-center"
+            reverseOrder={false}
+            gutter={12}
+            containerClassName=""
+            containerStyle={{}}
+            toastOptions={{
+              className: '',
+              duration: 5000,
+              style: {
+                background: '#101010',
+                color: '#fff',
+                fontFamily: 'Poppins',
+                paddingRight: 15,
+                paddingLeft: 15,
               },
-            },
-          }}
-      />
-    </Router>
+              success: {
+                duration: 3000,
+                theme: {
+                  primary: 'green',
+                  secondary: 'black',
+                },
+              },
+            }}
+        />
+      </Router>
+    </SmoothScrollProvider>
   )
 }
 
